@@ -1,0 +1,313 @@
+/*
+ * Base stylesheet for the Jonatan Vale Psicanálise website.
+ *
+ * This stylesheet defines a sophisticated, calming colour palette and
+ * layout rules that are optimised for readability on both mobile and
+ * desktop devices. The aim is to convey professionalism and warmth,
+ * using deep blues and golden highlights inspired by the clinic logo.
+ */
+
+/* Colour variables for easy theme adjustments */
+:root {
+  --color-primary: #0b132b; /* darkest blue for backgrounds */
+  --color-secondary: #1c2541; /* slightly lighter dark blue */
+  --color-accent: #ef8354; /* warm accent used for buttons and highlights */
+  --color-light: #f7f7f7; /* light grey for sections */
+  --color-text: #ffffff; /* white text on dark backgrounds */
+  --color-text-dark: #333333; /* dark text on light backgrounds */
+  --max-width: 1000px;
+  --transition-fast: 0.3s ease;
+}
+
+/* Global resets and typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: #ffb085;
+}
+
+/* Navigation styling */
+nav {
+  width: 100%;
+  background-color: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 48px;
+  margin-right: 0.5rem;
+}
+
+.navbar-brand span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color var(--transition-fast);
+}
+
+.nav-links li a:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Mobile navigation */
+.mobile-menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-fast);
+  }
+
+  .nav-links.open {
+    max-height: 200px;
+  }
+
+  .nav-links li {
+    margin: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links li a {
+    display: block;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    color: var(--color-text);
+  }
+}
+
+/* Hero section */
+.hero {
+  background-image: url('assets/library.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-text);
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 19, 43, 0.6);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.btn:hover {
+  background-color: #f4a972;
+}
+
+/* Sections */
+section {
+  padding: 3rem 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-light {
+  background-color: var(--color-light);
+  color: var(--color-text-dark);
+}
+
+.section-light h2 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-container .about-image {
+  flex: 1 1 250px;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-container .about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.about-container .about-text {
+  flex: 2 1 300px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.service-card {
+  background-color: var(--color-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  flex: 1 1 280px;
+  margin-right: 1rem;
+  color: var(--color-text);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform var(--transition-fast);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-accent);
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.contact-card {
+  background-color: var(--color-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-item span {
+  margin-left: 0.5rem;
+}
+
+.contact-item i {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+}
+
+.footer {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  text-align: center;
+  padding: 1rem;
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: var(--color-accent);
+  font-size: 1.3rem;
+  transition: color var(--transition-fast);
+}
+
+.social-links a:hover {
+  color: #f4a972;
+}

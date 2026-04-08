@@ -5,10 +5,11 @@
   --panel-soft: rgba(255, 255, 255, 0.08);
   --text: #f5f7fb;
   --text-dark: #0d1b35;
-  --muted: #b9c6da;
-  --muted-dark: #4e5f7d;
+  --muted: #d6e0f0;
+  --muted-dark: #475977;
   --gold: #e8b24e;
   --gold-strong: #efbb63;
+  --green: #25d366;
   --shadow: 0 24px 60px rgba(6, 15, 31, 0.22);
   --radius: 28px;
   --container: 1180px;
@@ -41,7 +42,10 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -75,7 +79,7 @@ button {
 }
 
 .brand img {
-  width: clamp(120px, 14vw, 190px);
+  width: clamp(130px, 15vw, 210px);
   height: auto;
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
 }
@@ -87,12 +91,12 @@ button {
 }
 
 .brand-copy strong {
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   letter-spacing: 0.02em;
 }
 
 .brand-copy span {
-  color: var(--muted);
+  color: #f4d29b;
   font-size: 0.92rem;
 }
 
@@ -103,7 +107,7 @@ button {
 }
 
 .main-nav a {
-  color: #f4c17b;
+  color: #fff6e6;
   font-weight: 700;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -144,7 +148,7 @@ button {
   background:
     linear-gradient(90deg, rgba(7, 21, 47, 0.97) 0%, rgba(7, 21, 47, 0.84) 45%, rgba(7, 21, 47, 0.72) 100%),
     url('assets/library.png') center top/cover no-repeat;
-  opacity: 0.6;
+  opacity: 0.68;
   transform: scale(1.02);
 }
 
@@ -162,7 +166,7 @@ button {
 }
 
 .hero-logo {
-  width: min(100%, 460px);
+  width: min(100%, 480px);
   margin-bottom: 18px;
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.35));
 }
@@ -180,7 +184,9 @@ button {
 .hero h1,
 .section-heading h2,
 .install-panel h2,
-.booking-layout h2 {
+.agenda-release h3,
+.flow-card h3,
+.receipt-panel h3 {
   margin: 0;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -195,11 +201,17 @@ button {
 .section-heading p,
 .info-card p,
 .step-card p,
-.booking-layout p,
 .install-panel p,
 .contact-card span,
 .inline-note,
-.bullet-list {
+.bullet-list,
+.price-text,
+.quiz-result p,
+.flow-card p,
+.coupon-feedback,
+.receipt-panel p,
+.receipt-form label,
+.selected-plan-box span {
   color: var(--muted);
 }
 
@@ -211,7 +223,12 @@ button {
 
 .hero-actions,
 .booking-actions,
-.install-actions {
+.install-actions,
+.price-actions,
+.quiz-actions,
+.quiz-result-actions,
+.flow-actions,
+.receipt-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -239,15 +256,33 @@ button {
 }
 
 .btn-secondary {
-  color: var(--text);
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .btn-whatsapp {
   color: #ffffff;
   background: linear-gradient(135deg, #28d366 0%, #17b555 100%);
   box-shadow: 0 18px 35px rgba(37, 211, 102, 0.22);
+}
+
+.btn-outline-light {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.btn-outline-dark {
+  color: #10213f;
+  background: transparent;
+  border: 1px solid rgba(16, 33, 63, 0.16);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .hero-trust {
@@ -312,24 +347,33 @@ button {
 .section-panel .section-heading h2,
 .section-panel .info-card h3,
 .section-panel .contact-card strong,
-.section-panel .booking-side-card h3,
-.section-panel .booking-layout h2,
-.section-panel .install-panel h2,
-.section-panel .step-card h3,
-.section-panel .hero-copy,
-.section-panel .booking-layout,
-.section-panel .contact-card,
 .section-panel .bullet-list,
-.section-panel .inline-note {
+.section-panel .flow-card--light,
+.section-panel .flow-card--light p,
+.section-panel .price-card--regular,
+.section-panel .price-card--social,
+.section-panel .social-checker,
+.section-panel .receipt-panel,
+.section-panel .receipt-panel h3,
+.section-panel .receipt-form,
+.section-panel .receipt-form input,
+.section-panel .agenda-release,
+.section-panel .agenda-release p,
+.section-panel .selected-plan-box,
+.section-panel .selected-plan-box strong {
   color: #0d1b35;
 }
 
 .section-panel .section-heading p,
 .section-panel .info-card p,
 .section-panel .contact-card span,
-.section-panel .inline-note,
 .section-panel .bullet-list,
-.section-panel .booking-layout p {
+.section-panel .price-text,
+.section-panel .social-checker p,
+.section-panel .receipt-panel p,
+.section-panel .receipt-form label,
+.section-panel .selected-plan-box span,
+.section-panel .coupon-feedback {
   color: var(--muted-dark);
 }
 
@@ -339,41 +383,59 @@ button {
 
 .section-heading--center {
   text-align: center;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto 34px;
 }
 
 .section-heading h2,
 .install-panel h2,
-.booking-layout h2 {
+.agenda-release h3,
+.receipt-panel h3,
+.flow-card h3 {
   font-size: clamp(1.9rem, 3vw, 3.1rem);
 }
 
 .about-grid,
-.contact-grid {
+.contact-grid,
+.pricing-grid,
+.scheduler-flow,
+.form-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
+}
+
+.about-grid,
+.contact-grid,
+.pricing-grid,
+.scheduler-flow {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .info-card,
 .step-card,
 .contact-card,
-.booking-side-card,
 .install-panel,
-.booking-layout {
+.price-card,
+.social-checker,
+.flow-card,
+.receipt-panel,
+.agenda-release {
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .info-card,
 .step-card,
-.booking-side-card,
-.install-panel {
-  box-shadow: var(--shadow);
+.install-panel,
+.price-card,
+.social-checker,
+.flow-card,
+.receipt-panel,
+.agenda-release {
+  padding: 28px;
 }
 
 .info-card {
-  padding: 28px;
   background: linear-gradient(135deg, #17305f 0%, #0c1b35 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -383,19 +445,37 @@ button {
   border: 1px solid rgba(13, 27, 53, 0.08);
 }
 
-.info-card--contrast h3,
-.info-card--contrast li,
-.info-card--contrast p {
-  color: #f6f8fc;
+.info-card--contrast,
+.flow-card--dark {
+  background: linear-gradient(145deg, #16315f 0%, #0c1b35 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.info-card--contrast .bullet-list {
+.info-card--contrast h3,
+.info-card--contrast li,
+.info-card--contrast p,
+.flow-card--dark,
+.flow-card--dark h3,
+.flow-card--dark p,
+.flow-card--dark label,
+.flow-card--dark .selected-plan-box,
+.flow-card--dark .selected-plan-box strong,
+.flow-card--dark .selected-plan-box span,
+.flow-card--dark .coupon-feedback,
+.flow-card--dark .flow-badge {
+  color: #ffffff;
+}
+
+.info-card--contrast .bullet-list,
+.flow-card--dark .bullet-list {
   color: #dce5f3;
 }
 
 .info-card h3,
 .step-card h3,
-.booking-side-card h3 {
+.price-card h3,
+.social-checker h3,
+.contact-card strong {
   margin: 0 0 12px;
   font-size: 1.3rem;
 }
@@ -413,10 +493,6 @@ button {
   margin-top: 10px;
 }
 
-.bullet-list--compact li + li {
-  margin-top: 8px;
-}
-
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -424,57 +500,302 @@ button {
 }
 
 .step-card {
-  padding: 28px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.step-number {
+.step-card h3,
+.step-card p {
+  color: #ffffff;
+}
+
+.step-card p {
+  color: #dce7fb;
+}
+
+.step-number,
+.flow-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
+  min-width: 50px;
   height: 50px;
-  border-radius: 50%;
+  padding: 0 16px;
+  border-radius: 999px;
   background: rgba(232, 178, 78, 0.14);
   color: var(--gold);
   font-weight: 800;
   margin-bottom: 18px;
 }
 
-.booking-layout {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
-  gap: 22px;
-  align-items: start;
+.price-card {
+  border: 1px solid rgba(13, 27, 53, 0.08);
 }
 
-.inline-note {
-  margin-top: 18px;
-  padding: 14px 16px;
-  border-radius: 16px;
-  background: rgba(232, 178, 78, 0.08);
-  border: 1px solid rgba(232, 178, 78, 0.18);
+.price-card--social {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
-.booking-side-card {
-  padding: 26px;
-  background: linear-gradient(145deg, #1e335d 0%, #10213f 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.price-card--regular {
+  background: linear-gradient(180deg, #fff8ef 0%, #ffffff 100%);
 }
 
-.booking-side-card h3 {
+.price-tag {
+  display: inline-block;
+  margin: 0 0 14px;
+  font-weight: 800;
+  color: #10213f;
+  background: rgba(232, 178, 78, 0.16);
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+.price-text {
+  margin-top: 0;
+}
+
+.payment-panel {
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #13284f 0%, #0b1730 100%);
+  box-shadow: var(--shadow);
+}
+
+.payment-panel__copy h3,
+.payment-panel__copy p,
+.payment-panel .eyebrow {
   color: #ffffff;
 }
 
-.booking-side-card .bullet-list,
-.booking-side-card .bullet-list li {
-  color: #d8e3f4;
+.payment-panel__copy p:last-child {
+  color: #dce6f7;
+}
+
+.social-checker {
+  margin-top: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.social-quiz {
+  display: grid;
+  gap: 18px;
+}
+
+.quiz-question {
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: #f7faff;
+  border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.quiz-question p {
+  margin: 0 0 12px;
+  color: #10213f;
+  font-weight: 700;
+}
+
+.quiz-question label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 16px;
+  color: #425574;
+}
+
+.quiz-result {
+  margin-top: 20px;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #0f2140 0%, #132a51 100%);
+}
+
+.quiz-result h4,
+.quiz-result p {
+  color: #ffffff;
+  margin: 0;
+}
+
+.quiz-result p {
+  margin-top: 10px;
+  color: #dce7fa;
+}
+
+.scheduler-flow {
+  align-items: start;
+}
+
+.flow-card--light {
+  background: #ffffff;
+  border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.flow-card--light h3,
+.flow-card--light p,
+.flow-card--light strong,
+.flow-card--light span {
+  color: #0d1b35;
+}
+
+.plan-selector-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.plan-select-card {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(13, 27, 53, 0.1);
+  background: linear-gradient(180deg, #f7faff 0%, #ffffff 100%);
+  border-radius: 22px;
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.plan-select-card strong {
+  display: block;
+  color: #10213f;
+  font-size: 1.08rem;
+}
+
+.plan-select-card span {
+  display: block;
+  margin-top: 8px;
+  color: #50627f;
+}
+
+.plan-select-card:hover,
+.plan-select-card.is-active {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(9, 18, 36, 0.12);
+  border-color: rgba(232, 178, 78, 0.54);
+}
+
+.selected-plan-box {
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.selected-plan-label {
+  margin: 0 0 8px;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.selected-plan-box strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.selected-plan-box span {
+  display: block;
+  margin-top: 8px;
+}
+
+.payment-actions-stack {
+  align-items: stretch;
+}
+
+.payment-actions-stack .btn {
+  flex: 1 1 240px;
+  text-align: center;
+}
+
+.coupon-box {
+  margin-top: 24px;
+}
+
+.coupon-box label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.coupon-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.coupon-row input,
+.receipt-form input {
+  flex: 1 1 220px;
+  min-height: 54px;
+  border-radius: 18px;
+  border: 1px solid rgba(13, 27, 53, 0.16);
+  padding: 14px 16px;
+  background: #ffffff;
+  color: #10213f;
+}
+
+.flow-card--dark .coupon-row input {
+  background: rgba(255,255,255,0.96);
+}
+
+.coupon-feedback {
+  margin: 12px 0 0;
+}
+
+.coupon-feedback.is-error {
+  color: #ffd6d6;
+}
+
+.coupon-feedback.is-success {
+  color: #bff7d2;
+}
+
+.agenda-release {
+  margin-top: 26px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.agenda-release__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+}
+
+.agenda-release__head p {
+  margin-top: 12px;
+}
+
+.booking-actions--compact {
+  margin-top: 0;
+}
+
+.calendar-embed {
+  margin-top: 24px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f4f7fb;
+  border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.receipt-panel {
+  margin-top: 26px;
+  background: linear-gradient(180deg, #fff8ef 0%, #ffffff 100%);
+  border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.receipt-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
 }
 
 .install-panel {
-  padding: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -484,7 +805,7 @@ button {
   border-radius: 18px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.08);
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .contact-card {
@@ -510,13 +831,18 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   text-align: center;
-  color: var(--muted);
+  color: #edf3ff;
 }
 
 .footer-logo {
-  width: min(260px, 70vw);
+  width: min(280px, 72vw);
+}
+
+.build-meta {
+  font-size: 0.9rem;
+  color: #c8d7f1;
 }
 
 .floating-whatsapp {
@@ -549,342 +875,119 @@ button {
   font-weight: 800;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 @media (max-width: 1080px) {
   .hero-grid,
-  .booking-layout {
+  .about-grid,
+  .contact-grid,
+  .pricing-grid,
+  .scheduler-flow,
+  .agenda-release__head,
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-visual {
     justify-content: center;
   }
-}
 
-@media (max-width: 860px) {
-  .menu-toggle {
-    display: inline-block;
+  .hero-trust,
+  .steps-grid {
+    grid-template-columns: 1fr;
   }
 
+  .booking-actions--compact {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 840px) {
   .main-nav {
     position: absolute;
-    left: 16px;
-    right: 16px;
-    top: calc(100% + 10px);
-    padding: 14px;
-    border-radius: 22px;
-    background: rgba(7, 21, 47, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: var(--shadow);
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    display: none;
+    padding: 16px;
+    background: rgba(7, 21, 47, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .main-nav.open {
     display: flex;
   }
 
-  .hero-trust,
-  .steps-grid,
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .menu-toggle {
+    display: block;
+  }
+
+  .brand-copy {
+    display: none;
   }
 
   .header-bar {
     min-height: 82px;
   }
 
-  .brand-copy {
-    display: none;
+  .section,
+  .site-footer {
+    padding-top: 56px;
   }
 }
 
 @media (max-width: 640px) {
-  .section {
-    padding: 56px 0;
-  }
-
-  .section-panel {
-    padding-inline: 18px;
-    border-radius: 26px;
-  }
-
   .hero {
     padding-top: 24px;
   }
 
-  .hero-copy {
-    padding: 18px 0 10px;
+  .section-panel {
+    padding-inline: 16px;
+    border-radius: 28px;
   }
 
-  .hero h1 {
-    max-width: 100%;
+  .info-card,
+  .step-card,
+  .contact-card,
+  .install-panel,
+  .price-card,
+  .social-checker,
+  .flow-card,
+  .receipt-panel,
+  .agenda-release {
+    padding: 22px;
+    border-radius: 24px;
   }
 
-  .portrait-card {
-    width: min(100%, 360px);
+  .btn,
+  .payment-actions-stack .btn,
+  .quiz-result-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .floating-whatsapp {
-    padding: 14px;
+    right: 14px;
+    left: 14px;
+    justify-content: center;
   }
 
-  .floating-whatsapp__label {
-    display: none;
-  }
-}
-
-
-.calendar-embed {
-  margin-top: 26px;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 24px 60px rgba(6, 15, 31, 0.16);
-  border: 1px solid rgba(13, 27, 53, 0.08);
-}
-
-.calendar-embed iframe {
-  display: block;
-  width: 100%;
-  min-height: 760px;
-  background: #ffffff;
-}
-
-@media (max-width: 780px) {
-  .calendar-embed {
-    border-radius: 18px;
-  }
-
-  .calendar-embed iframe {
-    min-height: 680px;
+  .coupon-row {
+    flex-direction: column;
   }
 }
 
-/* ===== vNext updates: contrast, pricing, social quiz ===== */
-.hero-text,
-.hero-trust span,
-.step-card p,
-.install-panel p,
-.install-help,
-.site-footer,
-.footer-inner,
-.footer-inner p {
-  color: #edf3ff;
-}
-
-.step-card {
-  background: linear-gradient(145deg, rgba(24, 44, 82, 0.95), rgba(11, 24, 47, 0.98));
-}
-
-.install-panel {
-  background: linear-gradient(145deg, rgba(22, 38, 70, 0.98), rgba(8, 19, 40, 0.98));
-}
-
-.install-panel h2,
-.install-panel .eyebrow {
-  color: #ffffff;
-}
-
-.inline-note {
-  color: #18325b;
-  font-weight: 700;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 10px;
-}
-
-.price-card {
-  border-radius: 30px;
-  padding: 30px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.price-card--social {
-  background: linear-gradient(145deg, #18315e 0%, #0d1c38 100%);
-  color: #ffffff;
-}
-
-.price-card--regular {
-  background: #ffffff;
-  color: #10213f;
-  border: 1px solid rgba(16, 33, 63, 0.08);
-}
-
-.price-card--social .price-text,
-.price-card--social .bullet-list,
-.price-card--social .bullet-list li,
-.price-card--social .price-tag,
-.price-card--social h3 {
-  color: #ffffff;
-}
-
-.price-card--social .price-text,
-.price-card--social .bullet-list li {
-  color: #dbe7fb;
-}
-
-.price-card--regular .price-text,
-.price-card--regular .bullet-list li,
-.price-card--regular .price-tag {
-  color: #50627f;
-}
-
-.price-tag {
-  display: inline-block;
-  margin: 0 0 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-}
-
-.price-card h3 {
-  margin: 0 0 12px;
-  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-}
-
-.price-text {
-  margin-bottom: 18px;
-}
-
-.bullet-list--price {
-  margin-bottom: 22px;
-}
-
-.price-btn {
-  display: inline-flex;
-}
-
-.social-checker {
-  margin-top: 28px;
-  padding: 28px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(245,248,253,1) 0%, rgba(236,242,251,1) 100%);
-  border: 1px solid rgba(16, 33, 63, 0.08);
-}
-
-.social-checker__intro h3 {
-  margin: 0 0 10px;
-  font-size: clamp(1.45rem, 2vw, 2rem);
-  color: #10213f;
-}
-
-.social-checker__intro p:last-child {
-  color: #50627f;
-}
-
-.social-quiz {
-  margin-top: 22px;
-  display: grid;
-  gap: 16px;
-}
-
-.quiz-question {
-  background: #ffffff;
-  border-radius: 22px;
-  padding: 18px 20px;
-  border: 1px solid rgba(16, 33, 63, 0.08);
-}
-
-.quiz-question p {
-  margin: 0 0 12px;
-  color: #10213f;
-  font-weight: 700;
-}
-
-.quiz-question label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: 18px;
-  color: #40526f;
-  font-weight: 600;
-}
-
-.quiz-actions,
-.quiz-result-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.quiz-result {
-  margin-top: 22px;
-  border-radius: 24px;
-  padding: 22px;
-  background: linear-gradient(145deg, #18315e 0%, #0d1c38 100%);
-  color: #ffffff;
-}
-
-.quiz-result h4 {
-  margin: 0 0 8px;
-  font-size: 1.35rem;
-  color: #ffffff;
-}
-
-.quiz-result p {
-  margin: 0 0 18px;
-  color: #dce6f6;
-}
-
-.calendar-embed {
-  margin-top: 28px;
-  border-radius: 30px;
-  overflow: hidden;
-  border: 1px solid rgba(16, 33, 63, 0.08);
-  box-shadow: 0 24px 70px rgba(0,0,0,0.12);
-  background: #ffffff;
-}
-
-.calendar-embed iframe {
-  display: block;
-  min-height: 760px;
-  background: #ffffff;
-}
-
-@media (max-width: 980px) {
-  .pricing-grid,
-  .about-grid,
-  .contact-grid,
-  .booking-layout,
-  .hero-grid,
-  .steps-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .brand img {
-    width: 140px;
-  }
-}
-
-@media (max-width: 640px) {
-  .price-card,
-  .social-checker,
-  .quiz-question,
-  .install-panel,
-  .booking-side-card,
-  .info-card,
-  .contact-card,
-  .step-card {
-    padding: 20px;
-    border-radius: 22px;
-  }
-
-  .calendar-embed iframe {
-    min-height: 680px;
-    height: 680px;
-  }
-
-  .quiz-question label {
-    display: flex;
-    margin: 0 0 10px;
+@media print {
+  .site-header,
+  .floating-whatsapp,
+  .site-footer,
+  .btn,
+  .install-panel {
+    display: none !important;
   }
 }

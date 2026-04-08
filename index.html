@@ -3,167 +3,246 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jonatan Vale Psicanálise - Atendimento Online</title>
-    <meta name="description" content="Conheça o trabalho de Jonatan Vale, psicanalista clínico que oferece atendimento online, sigiloso e acolhedor." />
+    <title>Jonatan Vale Psicanálise | Atendimento Online</title>
+    <meta
+      name="description"
+      content="Atendimento online em psicanálise clínica com acolhimento, escuta qualificada, agenda integrada ao Google Calendar e consulta por Google Meet."
+    />
+    <meta name="theme-color" content="#07152f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Jonatan Vale" />
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#0b132b" />
     <link rel="apple-touch-icon" href="assets/icon-192x192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
-    <style>
-      body { font-family: 'Montserrat', sans-serif; }
-    </style>
   </head>
   <body>
-    <nav>
-      <div class="navbar-container">
-        <div class="navbar-brand">
-          <img src="assets/logo.png" alt="Logotipo Jonatan Vale Psicanálise" />
-          <span>Psicanálise</span>
-        </div>
-        <div class="mobile-menu-icon">&#9776;</div>
-        <ul class="nav-links">
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
-    </nav>
+    <a class="floating-whatsapp" href="#" id="floating-whatsapp" aria-label="Conversar pelo WhatsApp">
+      <span class="floating-whatsapp__icon">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M19.11 17.28c-.27-.13-1.58-.78-1.83-.86-.24-.09-.41-.13-.58.13-.17.27-.67.86-.82 1.03-.15.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.33-.8-.71-1.34-1.58-1.5-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.17-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.58-1.39-.79-1.91-.21-.5-.42-.43-.58-.44l-.49-.01c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.31.96 2.58 1.09 2.76.13.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.58-.65 1.8-1.28.23-.63.23-1.18.16-1.29-.07-.11-.24-.18-.51-.31z" fill="currentColor"></path>
+          <path d="M26.53 5.46A14.87 14.87 0 0 0 16.02 1C7.77 1 1.05 7.72 1.05 15.98c0 2.64.69 5.21 1.99 7.48L1 31l7.75-2.03a14.91 14.91 0 0 0 7.27 1.86h.01c8.25 0 14.97-6.72 14.97-14.98 0-3.99-1.55-7.73-4.47-10.39zm-10.5 22.8h-.01a12.4 12.4 0 0 1-6.33-1.74l-.45-.27-4.6 1.21 1.23-4.48-.29-.46a12.37 12.37 0 0 1-1.9-6.54C3.68 9.14 9.18 3.63 16.02 3.63c3.3 0 6.4 1.28 8.73 3.61a12.3 12.3 0 0 1 3.63 8.74c0 6.84-5.51 12.28-12.35 12.28z" fill="currentColor"></path>
+        </svg>
+      </span>
+      <span class="floating-whatsapp__label">WhatsApp</span>
+    </a>
 
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Bem‑vindo(a) à Jonatan Vale Psicanálise</h1>
-        <p>Acolhimento, escuta e transformação através de atendimento online.</p>
-        <a href="#agendamento" class="btn">Agendar consulta</a>
+    <header class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="#inicio" aria-label="Início">
+          <img src="assets/logo.png" alt="Logo Jonatan Vale Psicanálise" />
+          <div class="brand-copy">
+            <strong>Jonatan Vale</strong>
+            <span>Psicanálise Clínica Online</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="main-menu">
+          <a href="#sobre">Sobre</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#agendamento">Agendamento</a>
+          <a href="#instalar">Instalar app</a>
+          <a href="#contato">Contato</a>
+        </nav>
       </div>
     </header>
 
-    <section id="sobre" class="section-light">
-      <h2>Sobre mim</h2>
-      <div class="about-container">
-        <div class="about-image">
-          <img src="assets/headshot.png" alt="Foto de Jonatan Vale" />
-        </div>
-        <div class="about-text">
-          <p>
-            Jonatan Vale é psicanalista clínico dedicado a promover o
-            bem‑estar emocional e o autoconhecimento. Com formação em
-            Psicanálise Clínica e sólida experiência na educação musical e na
-            direção artística, desenvolveu ao longo de mais de uma década uma
-            sensibilidade apurada para as nuances da expressão humana.
-          </p>
-          <p>
-            Sua trajetória inclui estudos em Pedagogia, Regência e Licenciatura
-            em Música, bem como atuação como professor, maestro e diretor
-            artístico em diversas instituições. Essa bagagem humanista
-            enriquece seu olhar psicanalítico, proporcionando uma abordagem
-            acolhedora, empática e comprometida com a singularidade de cada
-            paciente. Atualmente, oferece atendimento exclusivamente online,
-            garantindo conforto, sigilo e flexibilidade para pessoas que buscam
-            compreender seus sentimentos e transformar suas vidas.
-          </p>
-        </div>
-      </div>
-    </section>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <img class="hero-logo" src="assets/logo.png" alt="Jonatan Vale Psicanálise" />
+            <p class="eyebrow">Atendimento psicanalítico exclusivamente online</p>
+            <h1>Um espaço de escuta, profundidade e cuidado emocional.</h1>
+            <p class="hero-text">
+              Atendimento clínico online com acolhimento, sigilo e estrutura profissional.
+              A agenda é organizada pelo Google Calendar e as consultas acontecem por videochamada.
+            </p>
 
-    <section id="servicos">
-      <h2>Serviços</h2>
-      <div class="services">
-        <div class="service-card">
-          <h3>Consulta Individual</h3>
+            <div class="hero-actions">
+              <a class="btn btn-primary" id="book-button" href="#agendamento">Agendar consulta</a>
+              <button class="btn btn-secondary" id="install-button" type="button">Instalar app</button>
+            </div>
+
+            <div class="hero-trust">
+              <div>
+                <strong>100% online</strong>
+                <span>conforto e privacidade</span>
+              </div>
+              <div>
+                <strong>Google Agenda</strong>
+                <span>marcação simples e organizada</span>
+              </div>
+              <div>
+                <strong>Google Meet</strong>
+                <span>consulta por videochamada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="portrait-card">
+              <img src="assets/headshot.png" alt="Foto profissional de Jonatan Vale" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-panel" id="sobre">
+        <div class="section-heading">
+          <p class="eyebrow">Sobre a clínica</p>
+          <h2>Uma presença acolhedora, séria e comprometida com a singularidade de cada paciente.</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="info-card info-card--light">
+            <h3>Quem é Jonatan Vale</h3>
+            <p>
+              Jonatan Vale atua com Psicanálise Clínica Online e conduz seu trabalho com escuta atenta,
+              sensibilidade humana e compromisso ético. Sua trajetória formativa reúne psicanálise,
+              pedagogia, regência coral e licenciatura em música, ampliando seu olhar sobre expressão,
+              subjetividade e desenvolvimento humano.
+            </p>
+            <p>
+              Ao longo dos anos, também desenvolveu atividades em educação, direção artística e formação
+              de pessoas, experiências que fortaleceram sua capacidade de acolher histórias com profundidade,
+              respeito e cuidado.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Diferenciais do atendimento</h3>
+            <ul class="bullet-list">
+              <li>Atendimento totalmente online, com praticidade e discrição.</li>
+              <li>Organização da agenda com confirmação clara e profissional.</li>
+              <li>Espaço reservado para escuta, autoconhecimento e elaboração emocional.</li>
+              <li>Comunicação direta por WhatsApp para orientações e suporte.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="como-funciona">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow">Estrutura digital</p>
+          <h2>Como funciona sua consulta online</h2>
           <p>
-            Sessões de psicanálise voltadas ao autoconhecimento, trabalhando
-            questões emocionais, traumas, conflitos internos e padrões de
-            comportamento. Atendimento personalizado e empático, realizado
-            on‑line.
+            O site já foi estruturado para receber sua agenda do Google Calendar Appointment Schedule.
+            Depois de inserir seu link oficial, o paciente poderá reservar o horário com poucos cliques.
           </p>
         </div>
-        <div class="service-card">
-          <h3>Consulta de Casal</h3>
-          <p>
-            Acompanhamento para casais que desejam compreender e melhorar
-            dinâmicas relacionais, comunicação e resolução de conflitos.
-            Encontros virtuais confidenciais que respeitam a singularidade de
-            cada relacionamento.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Acompanhamento Continuado</h3>
-          <p>
-            Programa de acompanhamento regular para quem deseja um processo
-            terapêutico contínuo, explorando temas profundos ao longo do
-            tempo, com flexibilidade de agendas e foco nos objetivos de cada
-            paciente.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <section id="agendamento" class="section-light">
-      <h2>Agende sua Consulta</h2>
-      <p>
-        Para marcar uma sessão, clique no botão abaixo e escolha o melhor
-        horário. O calendário está integrado ao Google Calendar para garantir
-        praticidade e sincronização com sua agenda.
-      </p>
-      <p>
-        <strong>Nota:</strong> Após a confirmação, você receberá um link
-        exclusivo para a videochamada da consulta.
-      </p>
-      <a href="#" class="btn" id="book-button">Agendar agora</a>
-    </section>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <h3>Escolha do horário</h3>
+            <p>O paciente acessa sua página de agendamento e seleciona o melhor horário disponível.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3>Confirmação automática</h3>
+            <p>O compromisso entra na agenda e o processo fica centralizado no Google Calendar.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3>Consulta por videochamada</h3>
+            <p>O atendimento acontece online. A estrutura do site já comunica esse fluxo de forma profissional.</p>
+          </article>
+        </div>
+      </section>
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <div class="contact-card">
-        <div class="contact-item">
-          <i class="fa fa-phone"></i>
-          <span>(11) 96827‑2371</span>
-        </div>
-        <div class="contact-item">
-          <i class="fa fa-envelope"></i>
-          <span><a href="mailto:jonatanoficial@gmail.com">jonatanoficial@gmail.com</a></span>
-        </div>
-        <div class="contact-item">
-          <i class="fa fa-whatsapp"></i>
-          <span><a href="https://wa.me/qr/LM43TN5GGT3HL1" target="_blank" rel="noopener">WhatsApp</a></span>
-        </div>
-        <div class="contact-item">
-          <i class="fa fa-instagram"></i>
-          <span><a href="https://instagram.com/jonatan_vale_Oficial" target="_blank" rel="noopener">Instagram</a></span>
-        </div>
-        <div class="contact-item">
-          <i class="fa fa-facebook"></i>
-          <span><a href="https://facebook.com/jonatan.vale.7" target="_blank" rel="noopener">Facebook</a></span>
-        </div>
-      </div>
-    </section>
+      <section class="section section-panel" id="agendamento">
+        <div class="booking-layout">
+          <div>
+            <p class="eyebrow">Agendamento</p>
+            <h2>Agenda integrada ao Google Calendar</h2>
+            <p>
+              Esta área foi preparada para receber o seu link do <strong>Google Calendar Appointment Schedule</strong>.
+              Assim que você colar o link oficial no arquivo de configuração do site, o botão abaixo passa a abrir
+              diretamente sua agenda de marcação.
+            </p>
+            <div class="inline-note" id="booking-status">
+              Link da agenda ainda não configurado. Enquanto isso, o botão direciona para o WhatsApp.
+            </div>
+            <div class="booking-actions">
+              <a class="btn btn-primary" id="schedule-link" href="#">Abrir agenda online</a>
+              <a class="btn btn-secondary" id="whatsapp-link" href="#">Falar no WhatsApp</a>
+            </div>
+          </div>
 
-    <footer class="footer">
-      <p>&copy; <span id="year"></span> Jonatan Vale Psicanálise. Todos os direitos reservados.</p>
-      <div class="social-links">
-        <a href="https://wa.me/qr/LM43TN5GGT3HL1" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a>
-        <a href="https://instagram.com/jonatan_vale_Oficial" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
-        <a href="https://facebook.com/jonatan.vale.7" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+          <aside class="booking-side-card">
+            <h3>Fluxo recomendado</h3>
+            <ul class="bullet-list bullet-list--compact">
+              <li>Paciente agenda pelo Google Agenda.</li>
+              <li>Você recebe tudo centralizado no calendário.</li>
+              <li>Consulta online confirmada com mais organização.</li>
+              <li>Suporte rápido via botão flutuante do WhatsApp.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="instalar">
+        <div class="install-panel">
+          <div>
+            <p class="eyebrow">Aplicativo instalável</p>
+            <h2>Instale este site como app no celular ou computador</h2>
+            <p>
+              O projeto foi atualizado como PWA. Em Android e desktop compatíveis, o botão abaixo abre o fluxo de instalação.
+              No iPhone e iPad, o site mostra as instruções para “Adicionar à Tela de Início”.
+            </p>
+          </div>
+          <div class="install-actions">
+            <button class="btn btn-primary" type="button" id="install-cta">Instalar agora</button>
+            <button class="btn btn-secondary" type="button" id="ios-help-button">Como instalar no iPhone</button>
+          </div>
+          <div class="install-help" id="install-help" hidden></div>
+        </div>
+      </section>
+
+      <section class="section section-panel" id="contato">
+        <div class="section-heading">
+          <p class="eyebrow">Contato direto</p>
+          <h2>Fale com Jonatan Vale</h2>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-card" id="contact-whatsapp" href="#" target="_blank" rel="noopener">
+            <strong>WhatsApp</strong>
+            <span>Atendimento e informações rápidas</span>
+          </a>
+          <a class="contact-card" href="tel:+5511968272371">
+            <strong>Telefone</strong>
+            <span>(11) 96827-2371</span>
+          </a>
+          <a class="contact-card" href="mailto:jonatanoficial@gmail.com">
+            <strong>E-mail</strong>
+            <span>jonatanoficial@gmail.com</span>
+          </a>
+          <a class="contact-card" href="https://instagram.com/jonatan_vale_Oficial" target="_blank" rel="noopener">
+            <strong>Instagram</strong>
+            <span>@jonatan_vale_Oficial</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <img class="footer-logo" src="assets/logo.png" alt="Logo da clínica" />
+        <p>© <span id="year"></span> Jonatan Vale Psicanálise. Todos os direitos reservados.</p>
       </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="site-config.js"></script>
     <script src="script.js"></script>
-    <script>
-      // Update the footer year dynamically
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // Placeholder booking button: open a Google Calendar appointment page or email
-      document.getElementById('book-button').addEventListener('click', function (e) {
-        e.preventDefault();
-        // Replace the following URL with your actual booking link
-        const bookingLink = 'https://calendar.google.com/calendar/u/0/r';
-        window.open(bookingLink, '_blank');
-      });
-    </script>
   </body>
 </html>

@@ -1,26 +1,10 @@
-JONATAN VALE PSICANALISE - SITE / APP ESTATICO
+Projeto estático pronto para publicação no GitHub Pages, Vercel ou Netlify.
 
-1) COMO ATIVAR O AGENDAMENTO DO GOOGLE CALENDAR
-- Abra o arquivo: site-config.js
-- Procure esta linha:
-  appointmentLink: 'COLE_AQUI_SEU_LINK_DO_GOOGLE_APPOINTMENT_SCHEDULE'
-- Substitua pelo seu link oficial do Google Calendar Appointment Schedule.
-- Exemplo de formato esperado:
-  https://calendar.app.google/xxxxxxxxxxxx
+Antes de publicar com o agendamento oficial:
+1. Abra o arquivo site-config.js
+2. Substitua a linha appointmentLink pelo link público do seu Google Calendar Appointment Schedule
+3. Publique normalmente
 
-2) COMO PUBLICAR NO GITHUB PAGES
-- Envie todos os arquivos para o repositório.
-- Ative GitHub Pages na branch principal.
-- Aguarde o site entrar no ar em HTTPS.
-
-3) INSTALACAO COMO APP
-- Android/Chrome: o navegador deve mostrar o fluxo de instalar app.
-- iPhone/iPad: abrir no Safari > Compartilhar > Adicionar a Tela de Inicio.
-
-4) CONTATOS CONFIGURADOS
-- WhatsApp: link direto com mensagem pronta
-- Telefone: (11) 96827-2371
-- Email: jonatanoficial@gmail.com
-
-5) OBSERVACAO
-- O site ja esta preparado para PWA, botao flutuante do WhatsApp e estrutura do Google Calendar + consulta online.
+Observações:
+- Se o link oficial ainda não estiver preenchido, o botão de agendamento usa o WhatsApp como alternativa.
+- O site está configurado como PWA e pode ser instalado no celular ou no computador.

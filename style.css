@@ -1,17 +1,16 @@
 :root {
   --bg: #07152f;
-  --bg-soft: #0d2146;
-  --panel: rgba(255, 255, 255, 0.06);
-  --panel-strong: rgba(255, 255, 255, 0.09);
-  --line: rgba(255, 255, 255, 0.12);
-  --text: #f8f8fb;
-  --muted: #bfd0ea;
+  --bg-soft: #0d1f43;
+  --panel: #ffffff;
+  --panel-soft: rgba(255, 255, 255, 0.08);
+  --text: #f5f7fb;
+  --text-dark: #0d1b35;
+  --muted: #b9c6da;
+  --muted-dark: #4e5f7d;
   --gold: #e8b24e;
-  --gold-strong: #f2a35b;
-  --dark: #091224;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
-  --radius: 24px;
-  --radius-sm: 16px;
+  --gold-strong: #efbb63;
+  --shadow: 0 24px 60px rgba(6, 15, 31, 0.22);
+  --radius: 28px;
   --container: 1180px;
 }
 
@@ -27,7 +26,7 @@ body {
   margin: 0;
   font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background:
-    radial-gradient(circle at top right, rgba(232, 178, 78, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(232, 178, 78, 0.18), transparent 28%),
     linear-gradient(180deg, #07152f 0%, #08111f 100%);
   color: var(--text);
 }
@@ -56,7 +55,7 @@ button {
   top: 0;
   z-index: 40;
   backdrop-filter: blur(20px);
-  background: rgba(7, 21, 47, 0.88);
+  background: rgba(7, 21, 47, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -71,12 +70,12 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   min-width: 0;
 }
 
 .brand img {
-  width: clamp(96px, 12vw, 170px);
+  width: clamp(120px, 14vw, 190px);
   height: auto;
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
 }
@@ -105,12 +104,12 @@ button {
 
 .main-nav a {
   color: #f4c17b;
-  font-weight: 600;
+  font-weight: 700;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .main-nav a:hover {
-  opacity: 0.85;
+  opacity: 0.88;
   transform: translateY(-1px);
 }
 
@@ -143,9 +142,9 @@ button {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(7, 21, 47, 0.98) 0%, rgba(7, 21, 47, 0.86) 45%, rgba(7, 21, 47, 0.72) 100%),
-    url('assets/library.png') center/cover no-repeat;
-  opacity: 0.55;
+    linear-gradient(90deg, rgba(7, 21, 47, 0.97) 0%, rgba(7, 21, 47, 0.84) 45%, rgba(7, 21, 47, 0.72) 100%),
+    url('assets/library.png') center top/cover no-repeat;
+  opacity: 0.6;
   transform: scale(1.02);
 }
 
@@ -163,7 +162,7 @@ button {
 }
 
 .hero-logo {
-  width: min(100%, 430px);
+  width: min(100%, 460px);
   margin-bottom: 18px;
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.35));
 }
@@ -226,7 +225,7 @@ button {
   cursor: pointer;
   font-weight: 800;
   letter-spacing: 0.01em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
@@ -243,6 +242,12 @@ button {
   color: var(--text);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.btn-whatsapp {
+  color: #ffffff;
+  background: linear-gradient(135deg, #28d366 0%, #17b555 100%);
+  box-shadow: 0 18px 35px rgba(37, 211, 102, 0.22);
 }
 
 .hero-trust {
@@ -300,7 +305,7 @@ button {
   margin: 0 auto;
   padding-inline: 24px;
   border-radius: 36px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(245,248,253,0.92) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(245,248,253,0.94) 100%);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
 }
 
@@ -325,7 +330,7 @@ button {
 .section-panel .inline-note,
 .section-panel .bullet-list,
 .section-panel .booking-layout p {
-  color: #4e5f7d;
+  color: var(--muted-dark);
 }
 
 .section-heading {
@@ -364,19 +369,28 @@ button {
 .step-card,
 .booking-side-card,
 .install-panel {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
 }
 
 .info-card {
   padding: 28px;
-  background: rgba(10, 28, 58, 0.75);
+  background: linear-gradient(135deg, #17305f 0%, #0c1b35 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .info-card--light {
   background: #ffffff;
   border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.info-card--contrast h3,
+.info-card--contrast li,
+.info-card--contrast p {
+  color: #f6f8fc;
+}
+
+.info-card--contrast .bullet-list {
+  color: #dce5f3;
 }
 
 .info-card h3,
@@ -411,6 +425,8 @@ button {
 
 .step-card {
   padding: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .step-number {
@@ -443,12 +459,23 @@ button {
 
 .booking-side-card {
   padding: 26px;
-  background: rgba(10, 28, 58, 0.9);
+  background: linear-gradient(145deg, #1e335d 0%, #10213f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.booking-side-card h3 {
+  color: #ffffff;
+}
+
+.booking-side-card .bullet-list,
+.booking-side-card .bullet-list li {
+  color: #d8e3f4;
 }
 
 .install-panel {
   padding: 32px;
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .install-help {
@@ -500,9 +527,9 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 16px;
+  padding: 14px 18px;
   border-radius: 999px;
-  background: #25d366;
+  background: linear-gradient(135deg, #25d366 0%, #12b85a 100%);
   color: #fff;
   box-shadow: 0 22px 40px rgba(37, 211, 102, 0.28);
 }
@@ -606,5 +633,258 @@ button {
 
   .floating-whatsapp__label {
     display: none;
+  }
+}
+
+
+.calendar-embed {
+  margin-top: 26px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(6, 15, 31, 0.16);
+  border: 1px solid rgba(13, 27, 53, 0.08);
+}
+
+.calendar-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 760px;
+  background: #ffffff;
+}
+
+@media (max-width: 780px) {
+  .calendar-embed {
+    border-radius: 18px;
+  }
+
+  .calendar-embed iframe {
+    min-height: 680px;
+  }
+}
+
+/* ===== vNext updates: contrast, pricing, social quiz ===== */
+.hero-text,
+.hero-trust span,
+.step-card p,
+.install-panel p,
+.install-help,
+.site-footer,
+.footer-inner,
+.footer-inner p {
+  color: #edf3ff;
+}
+
+.step-card {
+  background: linear-gradient(145deg, rgba(24, 44, 82, 0.95), rgba(11, 24, 47, 0.98));
+}
+
+.install-panel {
+  background: linear-gradient(145deg, rgba(22, 38, 70, 0.98), rgba(8, 19, 40, 0.98));
+}
+
+.install-panel h2,
+.install-panel .eyebrow {
+  color: #ffffff;
+}
+
+.inline-note {
+  color: #18325b;
+  font-weight: 700;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 10px;
+}
+
+.price-card {
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.price-card--social {
+  background: linear-gradient(145deg, #18315e 0%, #0d1c38 100%);
+  color: #ffffff;
+}
+
+.price-card--regular {
+  background: #ffffff;
+  color: #10213f;
+  border: 1px solid rgba(16, 33, 63, 0.08);
+}
+
+.price-card--social .price-text,
+.price-card--social .bullet-list,
+.price-card--social .bullet-list li,
+.price-card--social .price-tag,
+.price-card--social h3 {
+  color: #ffffff;
+}
+
+.price-card--social .price-text,
+.price-card--social .bullet-list li {
+  color: #dbe7fb;
+}
+
+.price-card--regular .price-text,
+.price-card--regular .bullet-list li,
+.price-card--regular .price-tag {
+  color: #50627f;
+}
+
+.price-tag {
+  display: inline-block;
+  margin: 0 0 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.price-card h3 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+}
+
+.price-text {
+  margin-bottom: 18px;
+}
+
+.bullet-list--price {
+  margin-bottom: 22px;
+}
+
+.price-btn {
+  display: inline-flex;
+}
+
+.social-checker {
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(245,248,253,1) 0%, rgba(236,242,251,1) 100%);
+  border: 1px solid rgba(16, 33, 63, 0.08);
+}
+
+.social-checker__intro h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  color: #10213f;
+}
+
+.social-checker__intro p:last-child {
+  color: #50627f;
+}
+
+.social-quiz {
+  margin-top: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.quiz-question {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 18px 20px;
+  border: 1px solid rgba(16, 33, 63, 0.08);
+}
+
+.quiz-question p {
+  margin: 0 0 12px;
+  color: #10213f;
+  font-weight: 700;
+}
+
+.quiz-question label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 18px;
+  color: #40526f;
+  font-weight: 600;
+}
+
+.quiz-actions,
+.quiz-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.quiz-result {
+  margin-top: 22px;
+  border-radius: 24px;
+  padding: 22px;
+  background: linear-gradient(145deg, #18315e 0%, #0d1c38 100%);
+  color: #ffffff;
+}
+
+.quiz-result h4 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.quiz-result p {
+  margin: 0 0 18px;
+  color: #dce6f6;
+}
+
+.calendar-embed {
+  margin-top: 28px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 33, 63, 0.08);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.12);
+  background: #ffffff;
+}
+
+.calendar-embed iframe {
+  display: block;
+  min-height: 760px;
+  background: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .pricing-grid,
+  .about-grid,
+  .contact-grid,
+  .booking-layout,
+  .hero-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand img {
+    width: 140px;
+  }
+}
+
+@media (max-width: 640px) {
+  .price-card,
+  .social-checker,
+  .quiz-question,
+  .install-panel,
+  .booking-side-card,
+  .info-card,
+  .contact-card,
+  .step-card {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .calendar-embed iframe {
+    min-height: 680px;
+    height: 680px;
+  }
+
+  .quiz-question label {
+    display: flex;
+    margin: 0 0 10px;
   }
 }
